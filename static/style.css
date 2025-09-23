@@ -1,0 +1,539 @@
+/* Microplastics Insight Platform - Custom Styles */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Root variables */
+:root {
+  --primary-blue: #1e40af;
+  --primary-blue-dark: #1e3a8a;
+  --secondary-teal: #0d9488;
+  --accent-orange: #f97316;
+  --warning-red: #dc2626;
+  --success-green: #16a34a;
+  --neutral-gray: #6b7280;
+  --light-gray: #f3f4f6;
+  --dark-gray: #111827;
+  --white: #ffffff;
+  
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+  --border-radius: 0.5rem;
+  --border-radius-lg: 0.75rem;
+}
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-gray);
+  background-color: var(--white);
+}
+
+/* Streamlit overrides */
+.stApp {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+.stApp > div > div > div > div {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 1rem;
+}
+
+/* Header and navigation */
+.stMarkdown h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-teal) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.stMarkdown h2 {
+  font-weight: 600;
+  font-size: 1.75rem;
+  color: var(--primary-blue);
+  border-bottom: 2px solid var(--light-gray);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.stMarkdown h3 {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--primary-blue-dark);
+  margin-bottom: 0.75rem;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+  color: white;
+  border-radius: var(--border-radius-lg);
+  margin-bottom: 2rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 300;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+/* Cards and metrics */
+.metric-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--primary-blue);
+  margin-bottom: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.metric-container:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.metric-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--neutral-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  line-height: 1;
+}
+
+/* Buttons */
+.stButton > button {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease-in-out;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.stButton > button:hover {
+  background: linear-gradient(135deg, var(--primary-blue-dark) 0%, var(--primary-blue) 100%);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.stButton > button:active {
+  transform: translateY(0);
+}
+
+/* Primary action buttons */
+.primary-button {
+  background: linear-gradient(135deg, var(--accent-orange) 0%, #ea580c 100%) !important;
+}
+
+.primary-button:hover {
+  background: linear-gradient(135deg, #ea580c 0%, var(--accent-orange) 100%) !important;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+}
+
+/* Sidebar */
+.css-1d391kg {
+  background: linear-gradient(180deg, var(--white) 0%, var(--light-gray) 100%);
+  border-right: 1px solid var(--light-gray);
+}
+
+.stSidebar > div > div {
+  padding: 1rem;
+}
+
+/* Sidebar navigation */
+.stSelectbox > div > div > select {
+  border: 2px solid var(--light-gray);
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.stSelectbox > div > div > select:focus {
+  border-color: var(--primary-blue);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+/* Form elements */
+.stTextInput > div > div > input,
+.stNumberInput > div > div > input,
+.stSelectbox > div > div > select,
+.stTextArea > div > div > textarea {
+  border: 2px solid var(--light-gray);
+  border-radius: var(--border-radius);
+  padding: 0.75rem;
+  transition: all 0.2s ease-in-out;
+  font-family: 'Inter', sans-serif;
+}
+
+.stTextInput > div > div > input:focus,
+.stNumberInput > div > div > input:focus,
+.stSelectbox > div > div > select:focus,
+.stTextArea > div > div > textarea:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+  outline: none;
+}
+
+/* File uploader */
+.stFileUploader > div > div {
+  border: 2px dashed var(--neutral-gray);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--light-gray);
+}
+
+.stFileUploader > div > div:hover {
+  border-color: var(--primary-blue);
+  background-color: #f0f9ff;
+}
+
+/* DataFrames and tables */
+.stDataFrame {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.element-container .stDataFrame > div > div {
+  border-radius: var(--border-radius);
+}
+
+/* Plotly charts */
+.plotly-chart {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background: white;
+}
+
+.plotly-chart:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Folium maps */
+.st-3g6f2t {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background: white;
+}
+
+/* Status messages */
+.stAlert {
+  border-radius: var(--border-radius);
+  border: none;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+[data-testid="stAlert"] {
+  border-left: 4px solid;
+}
+
+[data-testid="stAlert"] div strong {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+}
+
+/* Success alerts */
+[data-testid="stAlert"] [data-baseweb="block"][role="alert"] {
+  border-left-color: var(--success-green);
+  background-color: #f0fdf4;
+}
+
+[data-testid="stAlert"] [data-baseweb="block"][role="alert"] strong {
+  color: var(--success-green);
+}
+
+/* Warning alerts */
+[data-testid="stAlert"] [data-baseweb="block"][role="alert"] {
+  border-left-color: var(--warning-red);
+  background-color: #fef2f2;
+}
+
+[data-testid="stAlert"] [data-baseweb="block"][role="alert"] strong {
+  color: var(--warning-red);
+}
+
+/* Info alerts */
+[data-testid="stAlert"] [data-baseweb="block"][role="alert"] {
+  border-left-color: var(--primary-blue);
+  background-color: #eff6ff;
+}
+
+[data-testid="stAlert"] [data-baseweb="block"][role="alert"] strong {
+  color: var(--primary-blue);
+}
+
+/* Columns and layout */
+.stHorizontalBlock .stHorizontalBlock > div {
+  padding: 1rem;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  margin-right: 1rem;
+}
+
+.stHorizontalBlock .stHorizontalBlock > div:last-child {
+  margin-right: 0;
+}
+
+/* Expanders */
+.stExpander {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--light-gray);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.stExpander > div > label > label {
+  font-weight: 600;
+  color: var(--primary-blue);
+  padding: 0.75rem 1rem;
+  background: var(--light-gray);
+}
+
+.stExpander > div > div > div {
+  padding: 1rem;
+}
+
+/* Download buttons */
+.stDownloadButton > button {
+  background: linear-gradient(135deg, var(--success-green) 0%, #15803d 100%);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.stDownloadButton > button:hover {
+  background: linear-gradient(135deg, #15803d 0%, var(--success-green) 100%);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+/* Progress bars */
+.stProgress > div > div > div {
+  background: linear-gradient(90deg, var(--primary-blue), var(--secondary-teal));
+  border-radius: var(--border-radius);
+  height: 0.5rem;
+}
+
+/* Sidebar title */
+.css-1d391kg h1 {
+  color: var(--primary-blue);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  border-bottom: 2px solid var(--primary-blue);
+  padding-bottom: 0.5rem;
+}
+
+/* Metric cards */
+[data-testid="metric-container"] {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--primary-blue);
+  margin-bottom: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+[data-testid="metric-container"]:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+[data-testid="metric-container"] .stMetric > label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--neutral-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+[data-testid="metric-container"] .stMetric > div > div {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  line-height: 1;
+}
+
+/* Color-coded metrics */
+.metric-high [data-testid="metric-container"] {
+  border-left-color: var(--warning-red);
+}
+
+.metric-high [data-testid="metric-container"] .stMetric > div > div {
+  color: var(--warning-red);
+}
+
+.metric-medium [data-testid="metric-container"] {
+  border-left-color: var(--accent-orange);
+}
+
+.metric-medium [data-testid="metric-container"] .stMetric > div > div {
+  color: var(--accent-orange);
+}
+
+.metric-low [data-testid="metric-container"] {
+  border-left-color: var(--success-green);
+}
+
+.metric-low [data-testid="metric-container"] .stMetric > div > div {
+  color: var(--success-green);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .stMarkdown h1 {
+    font-size: 2rem;
+  }
+  
+  [data-testid="metric-container"] .stMetric > div > div {
+    font-size: 1.5rem;
+  }
+  
+  .stButton > button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stHorizontalBlock .stHorizontalBlock > div {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Animation for loading states */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stApp > div > div > div > div {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neutral-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-blue);
+}
+
+/* Print styles */
+@media print {
+  .stApp {
+    background: white !important;
+  }
+  
+  .hero {
+    background: white !important;
+    color: black !important;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  button {
+    display: none !important;
+  }
+  
+  .stSidebar {
+    display: none !important;
+  }
+}
+
+/* Dark mode support (if Streamlit dark mode is enabled) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --light-gray: #1f2937;
+    --white: #111827;
+  }
+  
+  .stApp {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+  }
+  
+  .metric-container,
+  [data-testid="metric-container"] {
+    background: #1f2937;
+    color: white;
+  }
+}

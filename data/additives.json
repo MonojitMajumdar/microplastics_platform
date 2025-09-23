@@ -1,0 +1,307 @@
+{
+  "Polyethylene (PE)": {
+    "uses": "Packaging, bottles, films, bags",
+    "degradation": "500+ years",
+    "recyclable": "Yes (Type 2 HDPE)",
+    "density": 0.94,
+    "risks": {
+      "Marine Life": 7,
+      "Human Health": 4,
+      "Bioaccumulation": 6
+    },
+    "additives": [
+      {
+        "name": "Irganox 1010",
+        "chemical_name": "Pentaerythritol tetrakis(3-(3,5-di-tert-butyl-4-hydroxyphenyl)propionate)",
+        "function": "Antioxidant",
+        "toxicity": "Low",
+        "marine_impact": "Minimal leaching, low aquatic toxicity",
+        "human_health": "Food contact approved, low migration",
+        "regulations": "EU 10/2011 approved"
+      },
+      {
+        "name": "Calcium Stearate",
+        "chemical_name": "Calcium stearate",
+        "function": "Lubricant/Stabilizer",
+        "toxicity": "Low",
+        "marine_impact": "Biodegradable, low environmental persistence",
+        "human_health": "Generally recognized as safe (GRAS)",
+        "regulations": "FDA approved for food contact"
+      },
+      {
+        "name": "Erucamide",
+        "chemical_name": "Erucamide",
+        "function": "Slip Agent",
+        "toxicity": "Low",
+        "marine_impact": "Readily biodegradable",
+        "human_health": "Low toxicity, minimal skin irritation",
+        "regulations": "Approved for food packaging"
+      }
+    ],
+    "common_applications": [
+      "Plastic bags",
+      "Bottles and containers", 
+      "Agricultural film",
+      "Pipes and fittings"
+    ]
+  },
+  "Polypropylene (PP)": {
+    "uses": "Containers, automotive parts, textiles",
+    "degradation": "400+ years",
+    "recyclable": "Yes (Type 5)",
+    "density": 0.90,
+    "risks": {
+      "Marine Life": 6,
+      "Human Health": 3,
+      "Bioaccumulation": 5
+    },
+    "additives": [
+      {
+        "name": "Tinuvin 770",
+        "chemical_name": "Bis(2,2,6,6-tetramethyl-4-piperidyl)sebacate",
+        "function": "UV Stabilizer",
+        "toxicity": "Moderate",
+        "marine_impact": "UV stabilizer, slow release in water",
+        "human_health": "Skin contact concerns, eye irritant",
+        "regulations": "Restricted in some food applications"
+      },
+      {
+        "name": "Chimassorb 944",
+        "chemical_name": "Poly[[6-[(1,1,3,3-tetramethylbutyl)amino]-1,3,5-triazine-2,4-diyl][(2,2,6,6-tetramethyl-4-piperidinyl)imino]-1,6-hexanediyl[(2,2,6,6-tetramethyl-4-piperidinyl)imino]]",
+        "function": "UV Absorber",
+        "toxicity": "Low to moderate",
+        "marine_impact": "Low water solubility",
+        "human_health": "Low acute toxicity",
+        "regulations": "Approved for plastic applications"
+      }
+    ],
+    "common_applications": [
+      "Food containers",
+      "Medical syringes",
+      "Automotive components",
+      "Ropes and textiles"
+    ]
+  },
+  "Polystyrene (PS)": {
+    "uses": "Foam packaging, disposable cups, insulation",
+    "degradation": "Never fully degrades",
+    "recyclable": "Yes (Type 6)",
+    "density": 1.05,
+    "risks": {
+      "Marine Life": 9,
+      "Human Health": 7,
+      "Bioaccumulation": 8
+    },
+    "additives": [
+      {
+        "name": "HBCD (Hexabromocyclododecane)",
+        "chemical_name": "Hexabromocyclododecane",
+        "function": "Flame Retardant",
+        "toxicity": "High",
+        "marine_impact": "Persistent organic pollutant (POP), bioaccumulative",
+        "human_health": "Probable carcinogen, developmental toxicant",
+        "regulations": "Stockholm Convention - Phase out required"
+      },
+      {
+        "name": "Styrene Monomer",
+        "chemical_name": "Styrene",
+        "function": "Monomer",
+        "toxicity": "High",
+        "marine_impact": "Toxic to aquatic life, volatile",
+        "human_health": "Neurotoxic, possible carcinogen (Group 2A)",
+        "regulations": "IARC 2A carcinogen, workplace limits"
+      },
+      {
+        "name": "Decabromodiphenyl oxide (DecaBDE)",
+        "chemical_name": "2,2',3,3',4,4',5,5',6,6'-Decabromodiphenyl ether",
+        "function": "Flame Retardant",
+        "toxicity": "High",
+        "marine_impact": "Persistent, bioaccumulative, toxic (PBT)",
+        "human_health": "Thyroid disruptor, developmental effects",
+        "regulations": "EU - banned in most applications"
+      }
+    ],
+    "common_applications": [
+      "Foam packaging (EPS)",
+      "Disposable cups and plates",
+      "Building insulation",
+      "CD cases"
+    ]
+  },
+  "Polyethylene terephthalate (PET)": {
+    "uses": "Bottles, clothing fibers, food trays",
+    "degradation": "450+ years",
+    "recyclable": "Yes (Type 1)",
+    "density": 1.38,
+    "risks": {
+      "Marine Life": 8,
+      "Human Health": 6,
+      "Bioaccumulation": 7
+    },
+    "additives": [
+      {
+        "name": "Antimony Trioxide",
+        "chemical_name": "Antimony(III) oxide",
+        "function": "Catalyst",
+        "toxicity": "High",
+        "marine_impact": "Toxic to aquatic organisms, persistent",
+        "human_health": "Possible carcinogen (IARC 2B), pneumoconiosis risk",
+        "regulations": "EU - classified as carcinogen"
+      },
+      {
+        "name": "Acetaldehyde",
+        "chemical_name": "Acetaldehyde",
+        "function": "Byproduct",
+        "toxicity": "Moderate",
+        "marine_impact": "Volatile, low persistence",
+        "human_health": "Probable carcinogen (IARC 2B)",
+        "regulations": "EU - migration limits in food contact"
+      }
+    ],
+    "common_applications": [
+      "Water and soda bottles",
+      "Synthetic fibers (polyester)",
+      "Food trays and containers",
+      "Strapping"
+    ]
+  },
+  "Polyvinyl chloride (PVC)": {
+    "uses": "Pipes, flooring, medical devices, cables",
+    "degradation": "1000+ years",
+    "recyclable": "Limited (Type 3)",
+    "density": 1.4,
+    "risks": {
+      "Marine Life": 10,
+      "Human Health": 9,
+      "Bioaccumulation": 9
+    },
+    "additives": [
+      {
+        "name": "DEHP (Diethylhexyl phthalate)",
+        "chemical_name": "Bis(2-ethylhexyl) phthalate",
+        "function": "Plasticizer",
+        "toxicity": "Very High",
+        "marine_impact": "Endocrine disruptor, persistent, bioaccumulative",
+        "human_health": "Reproductive toxicity, endocrine disruption",
+        "regulations": "EU REACH - substance of very high concern"
+      },
+      {
+        "name": "Lead Stabilizers",
+        "chemical_name": "Lead compounds",
+        "function": "Heat Stabilizer",
+        "toxicity": "Extremely High",
+        "marine_impact": "Heavy metal, persistent, toxic",
+        "human_health": "Neurotoxic, developmental toxicant",
+        "regulations": "Global phase-out in progress"
+      },
+      {
+        "name": "Dioxins (from incineration)",
+        "chemical_name": "Polychlorinated dibenzodioxins",
+        "function": "Byproduct",
+        "toxicity": "Extremely High",
+        "marine_impact": "Most toxic known compounds, persistent",
+        "human_health": "Carcinogenic, immunotoxic",
+        "regulations": "Stockholm Convention - POP"
+      }
+    ],
+    "common_applications": [
+      "Pipes and fittings",
+      "Vinyl flooring",
+      "Medical tubing",
+      "Electrical cables"
+    ]
+  },
+  "Polycarbonate (PC)": {
+    "uses": "Baby bottles, eyewear, CDs, water bottles",
+    "degradation": "Variable (can leach)",
+    "recyclable": "Yes (Type 7)",
+    "density": 1.2,
+    "risks": {
+      "Marine Life": 8,
+      "Human Health": 8,
+      "Bioaccumulation": 7
+    },
+    "additives": [
+      {
+        "name": "BPA (Bisphenol A)",
+        "chemical_name": "4,4'-Isopropylidenediphenol",
+        "function": "Monomer",
+        "toxicity": "High",
+        "marine_impact": "Endocrine disruptor, moderate persistence",
+        "human_health": "Endocrine disruptor, developmental effects",
+        "regulations": "EU - banned in baby bottles"
+      }
+    ],
+    "common_applications": [
+      "Baby bottles (formerly)",
+      "Eyeglass lenses",
+      "Compact discs",
+      "Sports equipment"
+    ]
+  },
+  "Polyamide (Nylon) (PA)": {
+    "uses": "Textiles, ropes, mechanical parts",
+    "degradation": "30-50 years",
+    "recyclable": "Limited",
+    "density": 1.15,
+    "risks": {
+      "Marine Life": 5,
+      "Human Health": 2,
+      "Bioaccumulation": 3
+    },
+    "additives": [
+      {
+        "name": "Caprolactam",
+        "chemical_name": "Caprolactam",
+        "function": "Monomer",
+        "toxicity": "Moderate",
+        "marine_impact": "Low persistence, biodegradable",
+        "human_health": "Skin and eye irritant",
+        "regulations": "EU - workplace exposure limits"
+      }
+    ],
+    "common_applications": [
+      "Clothing fibers",
+      "Fishing nets and lines",
+      "Automotive parts",
+      "Industrial ropes"
+    ]
+  },
+  "Polyurethane (PU)": {
+    "uses": "Foams, coatings, adhesives, footwear",
+    "degradation": "Variable",
+    "recyclable": "Limited",
+    "density": 1.2,
+    "risks": {
+      "Marine Life": 7,
+      "Human Health": 6,
+      "Bioaccumulation": 6
+    },
+    "additives": [
+      {
+        "name": "TDI (Toluene Diisocyanate)",
+        "chemical_name": "Toluene-2,4-diisocyanate",
+        "function": "Reactive component",
+        "toxicity": "High",
+        "marine_impact": "Reactive, low persistence",
+        "human_health": "Respiratory sensitizer, toxic by inhalation",
+        "regulations": "EU - strict workplace controls"
+      },
+      {
+        "name": "Flame retardants (various)",
+        "chemical_name": "Various organophosphorus compounds",
+        "function": "Flame retardancy",
+        "toxicity": "Moderate to high",
+        "marine_impact": "Variable persistence",
+        "human_health": "Potential endocrine disruptors",
+        "regulations": "Ongoing evaluation"
+      }
+    ],
+    "common_applications": [
+      "Flexible foams (mattresses)",
+      "Rigid foams (insulation)",
+      "Surface coatings",
+      "Adhesives"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+sample_id,latitude,longitude,concentration,sample_date,year,polymer_type,source,method,depth,salinity,temperature
+1,40.7128,-74.0060,25.3,2015-06-15,2015,Polyethylene (PE),Wastewater effluent,Nets,0.5,35.2,18.5
+2,52.5200,13.4050,18.7,2016-03-22,2016,Polypropylene (PP),Stormwater runoff,Pumps,1.2,34.8,12.3
+3,51.5074,-0.1278,42.1,2017-09-10,2017,Polystyrene (PS),Fishing gear,Grab samples,0.8,35.0,16.8
+4,-33.8688,151.2093,67.4,2018-01-05,2018,Polyethylene terephthalate (PET),Atmospheric deposition,Nets,0.3,35.5,22.1
+5,35.6762,139.6503,33.2,2019-07-18,2019,Polyvinyl chloride (PVC),Shipping,Pumps,2.0,34.5,25.3
+6,37.7749,-122.4194,89.6,2020-04-12,2020,Polyethylene (PE),Aquaculture,Grab samples,1.5,33.9,14.2
+7,48.8566,2.3522,15.8,2021-11-03,2021,Polypropylene (PP),Landfill leachate,Nets,0.7,35.1,11.5
+8,-23.5505,-46.6333,112.4,2022-08-27,2022,Polystyrene (PS),Wastewater effluent,Pumps,1.8,36.0,20.8
+9,41.9028,12.4964,28.9,2023-02-14,2023,Polyethylene terephthalate (PET),Stormwater runoff,Grab samples,0.4,38.2,15.6
+10,36.7219,-4.4214,76.5,2024-05-09,2024,Polyvinyl chloride (PVC),Fishing gear,Nets,1.1,37.8,19.3
+11,-34.6037,-58.3816,45.2,2015-10-20,2015,Polyethylene (PE),Shipping,Pumps,0.9,34.2,17.9
+12,13.0827,80.2707,31.6,2016-07-08,2016,Polypropylene (PP),Atmospheric deposition,Grab samples,0.6,33.5,28.4
+13,-33.9249,18.4241,98.7,2017-12-15,2017,Polystyrene (PS),Aquaculture,Nets,2.3,35.7,16.2
+14,21.3069,-157.8583,54.3,2018-03-29,2018,Polyethylene terephthalate (PET),Landfill leachate,Pumps,1.4,34.9,24.7
+15,64.2008,-149.4937,22.1,2019-09-05,2019,Polyvinyl chloride (PVC),Wastewater effluent,Grab samples,0.2,32.1,8.5
+16,-12.0464,-77.0428,67.8,2020-06-22,2020,Polyethylene (PE),Stormwater runoff,Nets,1.6,35.3,20.1
+17,19.0760,72.8777,41.2,2021-01-18,2021,Polypropylene (PP),Fishing gear,Pumps,0.8,34.6,26.8
+18,22.3193,114.1694,83.4,2022-04-10,2022,Polystyrene (PS),Shipping,Grab samples,1.9,34.1,25.2
+19,1.3521,103.8198,29.7,2023-11-02,2023,Polyethylene terephthalate (PET),Aquaculture,Nets,0.5,31.8,29.5
+20,-6.2088,106.8456,156.3,2024-07-25,2024,Polyvinyl chloride (PVC),Landfill leachate,Pumps,2.1,33.4,27.8
