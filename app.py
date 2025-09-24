@@ -90,7 +90,7 @@ def main():
         st.markdown("- Research polymer toxicity")
         st.markdown("- Report debris through citizen science")
         st.markdown("- Act with data-driven insights")
-        st.markdown(f"Last Updated: {datetime.now().strftime('%I:%M %p IST, %B %d, %Y')}")  # 11:30 AM IST, September 24, 2025
+        st.markdown(f"Last Updated: {datetime.now().strftime('%I:%M %p IST, %B %d, %Y')}")  # 02:51 PM IST, September 24, 2025
 
     elif page == "Dashboard":
         st.header("Interactive Dashboard")
@@ -191,7 +191,7 @@ def main():
     elif page == "Predictions":
         st.header("AI Predictions")
         st.warning("AI predictions coming soon!")
-        st.markdown(f"Last Checked: {datetime.now().strftime('%I:%M %p IST, %B %d, %Y')}")  # 11:30 AM IST, September 24, 2025
+        st.markdown(f"Last Checked: {datetime.now().strftime('%I:%M %p IST, %B %d, %Y')}")  # 02:51 PM IST, September 24, 2025
 
     elif page == "Citizen Science":
         st.header("Citizen Science Portal")
@@ -245,7 +245,7 @@ def main():
                             with col_res1:
                                 st.metric("Polymer Type", scanned_polymer)
                                 st.metric("Risk Level", f"{len(row['Associated_Disease'])} Diseases")
-                            with col_res2:
+                            with col_right:
                                 if len(row['cm?¹']) > 0:
                                     st.metric("Primary Peak", f"{row['cm?¹'][0]} cm⁻¹")
                                 st.metric("Confidence", "98%")

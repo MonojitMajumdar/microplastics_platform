@@ -1,5 +1,5 @@
 streamlit==1.38.0
-pandas==2.0.3  # Known to work with Python 3.11 and partially 3.13
+pandas==2.0.3
 Pillow==10.4.0
 python-dotenv==1.0.1
 requests==2.32.3
