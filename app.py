@@ -3,6 +3,7 @@ import pandas as pd
 from datetime import datetime
 import os
 import random
+import time
 
 st.set_page_config(
     page_title="Microplastics Insight Platform", 
@@ -20,6 +21,15 @@ def load_chemical_library(file_path='data/chemical_library.csv'):
         return pd.DataFrame()
     except:
         return pd.DataFrame()
+
+def save_chemical_library(df, file_path='data/chemical_library.csv'):
+    try:
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        df.to_csv(file_path, index=False)
+        return True
+    except Exception as e:
+        st.error(f"Error saving: {e}")
+        return False
 
 def mock_api_health():
     return {"status": "healthy", "timestamp": datetime.now().isoformat(), "version": "1.0.0"}
@@ -80,6 +90,7 @@ def main():
         st.markdown("- Research polymer toxicity")
         st.markdown("- Report debris through citizen science")
         st.markdown("- Act with data-driven insights")
+        st.markdown(f"Last Updated: {datetime.now().strftime('%I:%M %p IST, %B %d, %Y')}")  # 11:30 AM IST, September 24, 2025
 
     elif page == "Dashboard":
         st.header("Interactive Dashboard")
@@ -140,10 +151,9 @@ def main():
                     st.dataframe(new_df.head())
                     
                     if st.button("Save to Library", use_container_width=True):
-                        os.makedirs('data', exist_ok=True)
-                        new_df.to_csv('data/chemical_library.csv', index=False)
-                        st.success("Data saved!")
-                        st.rerun()
+                        if save_chemical_library(new_df):
+                            st.success("Data saved!")
+                            st.rerun()
                 except Exception as e:
                     st.error(f"Error: {e}")
         
@@ -181,6 +191,7 @@ def main():
     elif page == "Predictions":
         st.header("AI Predictions")
         st.warning("AI predictions coming soon!")
+        st.markdown(f"Last Checked: {datetime.now().strftime('%I:%M %p IST, %B %d, %Y')}")  # 11:30 AM IST, September 24, 2025
 
     elif page == "Citizen Science":
         st.header("Citizen Science Portal")
