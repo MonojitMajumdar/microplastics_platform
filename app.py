@@ -3,7 +3,6 @@ import pandas as pd
 from datetime import datetime
 import os
 import random
-import time
 
 st.set_page_config(
     page_title="Microplastics Insight Platform", 
@@ -22,14 +21,21 @@ def load_chemical_library(file_path='data/chemical_library.csv'):
     except:
         return pd.DataFrame()
 
-def save_chemical_library(df, file_path='data/chemical_library.csv'):
-    try:
-        os.makedirs(os.path.dirname(file_path), exist_ok=True)
-        df.to_csv(file_path, index=False)
-        return True
-    except Exception as e:
-        st.error(f"Error saving: {e}")
-        return False
+def mock_api_health():
+    return {"status": "healthy", "timestamp": datetime.now().isoformat(), "version": "1.0.0"}
+
+def mock_api_regions():
+    regions = ["Global", "North Atlantic", "South Pacific", "Indian Ocean", "Mediterranean", "Caribbean", "Arctic", "Antarctic"]
+    return {"status": "success", "count": len(regions), "regions": regions}
+
+def mock_api_stats():
+    return {
+        "total_samples": 1250,
+        "regions_covered": 8,
+        "avg_concentration": 45.7,
+        "dominant_polymer": "Polyethylene",
+        "last_updated": datetime.now().isoformat()
+    }
 
 def main():
     st.title("Microplastics Insight Platform")
@@ -49,13 +55,13 @@ def main():
 
     with col1:
         if st.button("Test API Health", use_container_width=True):
-            data = {"status": "healthy", "timestamp": datetime.now().isoformat(), "version": "1.0.0"}
+            data = mock_api_health()
             st.success("API is running (simulated)!")
             st.json(data)
 
     with col2:
         if st.button("Load Regions", use_container_width=True):
-            data = {"status": "success", "count": 8, "regions": ["Global", "North Atlantic", "South Pacific", "Indian Ocean", "Mediterranean", "Caribbean", "Arctic", "Antarctic"]}
+            data = mock_api_regions()
             st.success(f"Loaded {data['count']} regions!")
             for region in data['regions']:
                 st.write(f"- {region}")
@@ -74,20 +80,13 @@ def main():
         st.markdown("- Research polymer toxicity")
         st.markdown("- Report debris through citizen science")
         st.markdown("- Act with data-driven insights")
-        st.markdown(f"**Last Updated:** {datetime.now().strftime('%I:%M %p IST, %B %d, %Y')}")  # Current date/time: 10:22 AM IST, September 23, 2025
 
     elif page == "Dashboard":
         st.header("Interactive Dashboard")
-        st.info("Dashboard uses simulated data since API is not hosted separately.")
+        st.info("Dashboard uses simulated data.")
         
         if st.button("Load Sample Data", use_container_width=True):
-            stats = {
-                "total_samples": 1250,
-                "regions_covered": 8,
-                "avg_concentration": 45.7,
-                "dominant_polymer": "Polyethylene",
-                "last_updated": datetime.now().isoformat()
-            }
+            stats = mock_api_stats()
             col1, col2, col3, col4 = st.columns(4)
             with col1:
                 st.metric("Total Samples", f"{stats['total_samples']:,}")
@@ -141,9 +140,10 @@ def main():
                     st.dataframe(new_df.head())
                     
                     if st.button("Save to Library", use_container_width=True):
-                        if save_chemical_library(new_df):
-                            st.success("Data saved!")
-                            st.rerun()
+                        os.makedirs('data', exist_ok=True)
+                        new_df.to_csv('data/chemical_library.csv', index=False)
+                        st.success("Data saved!")
+                        st.rerun()
                 except Exception as e:
                     st.error(f"Error: {e}")
         
@@ -181,13 +181,12 @@ def main():
     elif page == "Predictions":
         st.header("AI Predictions")
         st.warning("AI predictions coming soon!")
-        st.markdown(f"**Last Checked:** {datetime.now().strftime('%I:%M %p IST, %B %d, %Y')}")  # Current date/time
 
     elif page == "Citizen Science":
-        st.header("👥 Citizen Science Portal")
-        st.info("📷 Upload photos or 🔬 scan with Raman spectrometer to contribute to global monitoring!")
+        st.header("Citizen Science Portal")
+        st.info("Upload photos or simulate Raman scans to contribute!")
         
-        tab_photo, tab_raman = st.tabs(["📸 Photo Upload", "🔬 Raman Scan"])
+        tab_photo, tab_raman = st.tabs(["Photo Upload", "Raman Scan"])
         
         with tab_photo:
             uploaded_file = st.file_uploader("Upload Photo of Debris", type=['jpg', 'jpeg', 'png'])
@@ -203,8 +202,8 @@ def main():
                     st.success(f"Report submitted: {debris_type} at {location}")
         
         with tab_raman:
-            st.subheader("🔬 Handheld Raman Spectrometer")
-            st.markdown("**Scan microplastics in the field!** Place sample in collection window and get instant polymer identification.")
+            st.subheader("Handheld Raman Spectrometer")
+            st.markdown("Simulate scanning microplastics in the field!")
             
             col_left, col_right = st.columns([1, 3])
             
@@ -214,26 +213,23 @@ def main():
                 st.progress(1.0)
                 col_a, col_b = st.columns(2)
                 with col_a:
-                    if st.button("📚 Library", key="lib_cs"):
+                    if st.button("Library", key="lib_cs"):
                         st.success("Library loaded!")
                 with col_b:
-                    if st.button("📊 Results", key="res_cs"):
+                    if st.button("Results", key="res_cs"):
                         st.success("Results shown!")
                 st.markdown("**Depth: 2.5mm**")
                 st.markdown("**Length: 15.2mm**")
             
             with col_right:
-                if st.button("🔦 Start Raman Scan", type="primary", use_container_width=True):
-                    with st.spinner("Scanning... (simulating Raman analysis)"):
+                if st.button("Start Raman Scan", type="primary", use_container_width=True):
+                    with st.spinner("Scanning... (simulated)"):
                         time.sleep(2)
-                        
                         chemical_df = load_chemical_library()
                         if not chemical_df.empty:
                             scanned_polymer = random.choice(chemical_df['Chemical_Name'].tolist())
                             row = chemical_df[chemical_df['Chemical_Name'] == scanned_polymer].iloc[0]
-                            
-                            st.success(f"✅ Scan Complete: **{scanned_polymer}** Detected!")
-                            
+                            st.success(f"Scan Complete: **{scanned_polymer}** Detected!")
                             col_res1, col_res2 = st.columns(2)
                             with col_res1:
                                 st.metric("Polymer Type", scanned_polymer)
@@ -242,69 +238,20 @@ def main():
                                 if len(row['cm?¹']) > 0:
                                     st.metric("Primary Peak", f"{row['cm?¹'][0]} cm⁻¹")
                                 st.metric("Confidence", "98%")
-                            
-                            st.subheader("Associated Health Risks")
+                            st.subheader("Health Risks")
                             for disease in row['Associated_Disease'][:3]:
                                 st.warning(f"• {disease}")
                             if len(row['Associated_Disease']) > 3:
-                                st.info(f"... +{len(row['Associated_Disease'])-3} more risks")
-                            
-                            st.subheader("FTIR Spectral Peaks")
-                            peaks = row['cm?¹'] if isinstance(row['cm?¹'], list) else str(row['cm?¹']).split(', ')
+                                st.info(f"... +{len(row['Associated_Disease'])-3} more")
+                            st.subheader("FTIR Peaks")
+                            peaks = row['cm?¹'].split(', ') if isinstance(row['cm?¹'], str) else row['cm?¹']
                             for peak in peaks[:5]:
-                                st.code(f"{peak.strip()} cm⁻¹", language=None)
-                            
-                            if st.button("📤 Submit Scan Data to Platform", use_container_width=True):
-                                st.success("✅ Scan data submitted to global database!")
+                                st.code(f"{peak.strip()} cm⁻¹")
+                            if st.button("Submit Scan Data", use_container_width=True):
+                                st.success("Data submitted!")
                                 st.balloons()
-                                st.info(f"Contributed {scanned_polymer} data from field analysis")
                         else:
-                            st.error("No chemical library data - upload CSV first in Polymer Library!")
-                
-                with st.expander("ℹ️ What is Raman Spectroscopy?"):
-                    st.markdown("""
-                    **Raman spectroscopy** uses laser light to identify molecular composition:
-                    
-                    **How it works:**
-                    1. Laser beam hits sample
-                    2. Molecules scatter light with unique "fingerprint" wavelengths  
-                    3. Device detects scattered light pattern
-                    4. Matches to known polymer spectra (like your cm⁻¹ library)
-                    
-                    **Perfect for microplastics because:**
-                    - Non-destructive (no sample prep needed)
-                    - Works on <20μm particles
-                    - Identifies PE, PP, PVC, PET in seconds
-                    - Field-portable (no lab required)
-                    
-                    **Matches your library peaks:** 1440 cm⁻¹ (PE), 809 cm⁻¹ (PP), etc.
-                    """)
-        
-        with st.expander("📋 Contribution Guide"):
-            st.markdown("""
-            ### How to Contribute with Raman Scanner
-            
-            **Photo Upload:**
-            1. Take clear photo of debris
-            2. Tag type, location, notes
-            3. Submit to global map
-            
-            **Raman Scan:**
-            1. Power on device (press power key)
-            2. Place sample in collection window
-            3. Press "Start Raman Scan" button
-            4. View instant polymer identification
-            5. Submit spectral data to platform
-            
-            **What we do:**
-            - Add to global polymer database
-            - Update chemical library with real spectra
-            - Generate hotspot alerts
-            - Support scientific research
-            - Create policy reports
-            
-            **Recommended devices:** Metrohm MIRA DS, B&W Tek NanoRam
-            """)
+                            st.error("No chemical library data")
 
     elif page == "Resources":
         st.header("Microplastics Resources")
@@ -312,7 +259,7 @@ def main():
 
     elif page == "About":
         st.header("About Us")
-        st.markdown("A Microplastics Insight Platform - Making ocean pollution visible and actionable. DYPIU-Monojit-M ")
+        st.markdown("A Microplastics Insight Platform - Making ocean pollution visible. DYPIU-Monojit-M")
 
 if __name__ == "__main__":
     main()
